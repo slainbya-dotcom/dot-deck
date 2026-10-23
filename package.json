@@ -1,0 +1,19 @@
+{
+  "name": "dot-deck",
+  "private": true,
+  "version": "1.0.1",
+  "description": "Every dot-matrix Dot widget in one app (Tauri)",
+  "scripts": {
+    "dev": "tauri dev",
+    "build:win": "tauri build --bundles msi",
+    "build:mac": "tauri build --target universal-apple-darwin --bundles dmg",
+    "test": "node tests/run-tests.js",
+    "vendor": "node tools/vendor.js"
+  },
+  "dependencies": {
+    "@mozilla/readability": "0.5.0"
+  },
+  "devDependencies": {
+    "@tauri-apps/cli": "^2"
+  }
+}

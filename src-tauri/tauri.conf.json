@@ -1,0 +1,57 @@
+{
+  "$schema": "https://schema.tauri.app/config/2",
+  "productName": "Dot Deck",
+  "version": "1.0.1",
+  "identifier": "app.worldtime.dotdeck",
+  "build": {
+    "frontendDist": "../src",
+    "beforeBuildCommand": "npm run vendor",
+    "beforeDevCommand": "npm run vendor"
+  },
+  "app": {
+    "withGlobalTauri": true,
+    "macOSPrivateApi": true,
+    "windows": [
+      {
+        "label": "settings",
+        "title": "Dot Deck",
+        "url": "deck/settings.html",
+        "width": 940,
+        "height": 760,
+        "minWidth": 720,
+        "minHeight": 520,
+        "visible": false,
+        "center": true,
+        "additionalBrowserArgs": "--disable-features=msWebOOUI,msPdfOOUI,msSmartScreenProtection --autoplay-policy=no-user-gesture-required"
+      }
+    ],
+    "security": {
+      "csp": "default-src 'self' ipc: http://ipc.localhost; img-src 'self' data:; connect-src ipc: http://ipc.localhost https://api.open-meteo.com; style-src 'self' 'unsafe-inline'; object-src 'none'; base-uri 'none'"
+    }
+  },
+  "bundle": {
+    "active": true,
+    "targets": "all",
+    "category": "Utility",
+    "publisher": "dot-widget",
+    "copyright": "dot-widget",
+    "shortDescription": "Every Dot widget in one app",
+    "longDescription": "Dot Deck brings all the dot-matrix desktop widgets together: switch each on or off, arrange them on any screen, and keep a layout for each screen setup.",
+    "icon": [
+      "icons/32x32.png",
+      "icons/128x128.png",
+      "icons/128x128@2x.png",
+      "icons/icon.icns",
+      "icons/icon.ico"
+    ],
+    "windows": {
+      "wix": {
+        "language": "en-US"
+      }
+    },
+    "macOS": {
+      "minimumSystemVersion": "10.15",
+      "signingIdentity": "-"
+    }
+  }
+}

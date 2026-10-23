@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+  <!-- Merged into the app bundle's Info.plist by Tauri: the messages macOS shows when asking permission. -->
+  <key>NSLocationUsageDescription</key>
+  <string>Dot Deck uses your location once, when you ask it to, to set your home city (Clock, Sun, Weather).</string>
+  <key>NSLocationWhenInUseUsageDescription</key>
+  <string>Dot Deck uses your location once, when you ask it to, to set your home city (Clock, Sun, Weather).</string>
+  <key>NSAppleEventsUsageDescription</key>
+  <string>Dot Deck asks Spotify and Music what's playing (Player and Visualiser).</string>
+  <key>NSMicrophoneUsageDescription</key>
+  <string>Dot Visualiser listens to the sound input you choose so it can draw it. Nothing is recorded or sent anywhere.</string>
+</dict>
+</plist>

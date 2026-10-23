@@ -1,0 +1,96 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Dot Launcher — Settings</title>
+  <link rel="stylesheet" href="css/settings.css">
+</head>
+<body>
+  <main>
+    <!-- Items ----------------------------------------------------------------->
+    <section id="sec-items">
+      <h2>Apps, files, folders &amp; websites</h2>
+      <div class="buttons">
+        <button id="btn-add-app" type="button" class="primary">Add an app…</button>
+        <button id="btn-add-file" type="button">Add a file…</button>
+        <button id="btn-add-folder" type="button">Add a folder…</button>
+      </div>
+      <div class="add-line">
+        <input id="add-url" type="text" placeholder="Or a website, e.g. bbc.co.uk/news" autocomplete="off" spellcheck="false">
+        <button id="btn-add-url" type="button">Add website</button>
+      </div>
+      <p id="item-status" class="status" role="status"></p>
+      <ul id="item-list" class="item-list"></ul>
+      <p class="muted small">You can also drag apps, files and folders straight onto the widget. Each gets a dot icon and colour you can change here; the order here is the order on the widget. Up to 42.</p>
+    </section>
+
+    <!-- Style ------------------------------------------------------------------>
+    <section id="sec-style">
+      <h2>Style</h2>
+      <div class="grid">
+        <span>Style</span>
+        <div class="seg" role="radiogroup">
+          <label><input type="radio" name="style" value="icons"> A · Icons</label>
+          <label><input type="radio" name="style" value="list"> B · List</label>
+        </div>
+        <span class="for-icons">Icon rows</span>
+        <div class="seg for-icons" role="radiogroup">
+          <label><input type="radio" name="rows" value="1"> 1 row</label>
+          <label><input type="radio" name="rows" value="2"> 2 rows</label>
+          <label><input type="radio" name="rows" value="3"> 3 rows</label>
+        </div>
+        <span class="for-list">Rows shown</span>
+        <div class="inline for-list"><input id="opt-list-rows" type="range" min="2" max="8" step="1"> <output id="out-list-rows"></output></div>
+      </div>
+      <p id="style-note" class="muted small"></p>
+    </section>
+
+    <!-- Appearance ---------------------------------------------------------->
+    <section id="sec-look">
+      <h2>Appearance</h2>
+      <label class="check"><input id="opt-match" type="checkbox"> Match Dot Clock (same width, dot size and colours)</label>
+      <p id="match-status" class="muted small"></p>
+      <fieldset id="look-fields" class="grid plain">
+        <span>Dot colour</span>
+        <input id="opt-dot" type="color">
+        <span>Dot size</span>
+        <div class="inline"><input id="opt-size" type="range" min="2" max="8" step="1"> <output id="out-size"></output></div>
+        <span>Dot shape</span>
+        <div class="seg" role="radiogroup">
+          <label><input type="radio" name="shape" value="round"> Round</label>
+          <label><input type="radio" name="shape" value="square"> Square</label>
+        </div>
+        <span>Unlit dots</span>
+        <label class="check"><input id="opt-unlit" type="checkbox"> Show faint unlit dots</label>
+        <span>Background</span>
+        <input id="opt-bg" type="color">
+        <span>Opacity</span>
+        <div class="inline"><input id="opt-opacity" type="range" min="0" max="100" step="1"> <output id="out-opacity"></output></div>
+        <span>Width</span>
+        <div class="inline"><input id="opt-width" type="range" min="80" max="400" step="1"> <output id="out-width"></output></div>
+      </fieldset>
+    </section>
+
+    <!-- Window -------------------------------------------------------------->
+    <section id="sec-window">
+      <h2>Window</h2>
+      <label class="check"><input id="opt-top" type="checkbox"> Keep the widget on top of other windows</label>
+      <div class="buttons">
+        <button id="btn-center" type="button">Move widget to centre of screen</button>
+        <button id="btn-quit" type="button" class="danger">Quit Dot Launcher</button>
+      </div>
+      <p class="muted small">Drag the widget to move it, right-click it to open these settings.</p>
+      <p id="about" class="muted small"></p>
+    </section>
+  </main>
+
+  <script src="../../deck/bridge.js"></script>
+  <script src="js/time.js"></script>
+  <script src="js/dotmatrix.js"></script>
+  <script src="js/launcher.js"></script>
+  <script src="js/store.js"></script>
+  <script src="js/worldtime.js"></script>
+  <script src="js/settings.js"></script>
+</body>
+</html>

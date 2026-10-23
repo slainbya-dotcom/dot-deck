@@ -1,0 +1,122 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Dot Player — Settings</title>
+  <link rel="stylesheet" href="css/settings.css">
+</head>
+<body>
+  <main>
+    <!-- Now ------------------------------------------------------------------->
+    <section id="sec-now">
+      <h2>Right now</h2>
+      <div class="card">
+        <div id="now-main" class="strong">Reading…</div>
+        <div id="now-meta" class="muted"></div>
+      </div>
+      <p id="mac-note" class="muted small" hidden>On a Mac, Dot Player works with Spotify and Apple Music. The first time, macOS asks whether Dot Player may control them: click OK. (Music playing in a web browser can't be shown on a Mac.)</p>
+    </section>
+
+    <!-- Views ----------------------------------------------------------------->
+    <section id="sec-views">
+      <h2>Views</h2>
+      <div id="view-list" class="view-list"></div>
+      <p class="muted small">Switch a whole view on or off here, from the tray icon's menu, or with the little arrow at the right of the buttons row. Each view remembers its own ticks.</p>
+    </section>
+
+    <!-- Track ----------------------------------------------------------------->
+    <section id="sec-track">
+      <h2>Track &amp; colours</h2>
+      <div class="grid">
+        <span>Track &amp; artist</span>
+        <div class="seg" role="radiogroup">
+          <label><input type="radio" name="layout" value="one"> One scrolling line</label>
+          <label><input type="radio" name="layout" value="two"> Two lines</label>
+        </div>
+        <span>Times</span>
+        <div class="seg" role="radiogroup">
+          <label><input type="radio" name="tmode" value="length"> Elapsed + length</label>
+          <label><input type="radio" name="tmode" value="left"> Elapsed + time left</label>
+        </div>
+        <span>Scroll speed</span>
+        <select id="opt-speed">
+          <option value="1">Slow</option>
+          <option value="2">Normal</option>
+          <option value="4">Fast</option>
+        </select>
+        <span class="mac-only" hidden>Follow</span>
+        <select id="opt-source" class="mac-only" hidden>
+          <option value="auto">Spotify or Music, whichever is playing</option>
+          <option value="spotify">Spotify only</option>
+          <option value="music">Apple Music only</option>
+        </select>
+        <span>Colours</span>
+        <div class="seg" role="radiogroup">
+          <label><input type="radio" name="cmode" value="each"> A colour per row</label>
+          <label><input type="radio" name="cmode" value="one"> One colour for everything</label>
+        </div>
+      </div>
+    </section>
+
+    <!-- Devices --------------------------------------------------------------->
+    <section id="sec-devices">
+      <h2>Sound devices</h2>
+      <div class="grid">
+        <span>Output</span>
+        <select id="opt-output"></select>
+        <span>Input</span>
+        <select id="opt-input"></select>
+      </div>
+      <p class="muted small">This changes the device for the whole computer, the same as the system sound settings. You can also click the device name on the widget, or its ◂ ▸ arrows.</p>
+      <p id="dev-status" class="status"></p>
+    </section>
+
+    <!-- Appearance ---------------------------------------------------------->
+    <section id="sec-look">
+      <h2>Appearance</h2>
+      <label class="check"><input id="opt-match" type="checkbox"> Match Dot Clock (same width, dot size and colours)</label>
+      <p id="match-status" class="muted small"></p>
+      <fieldset id="look-fields" class="grid plain">
+        <span>Dot colour</span>
+        <input id="opt-dot" type="color">
+        <span>Dot size</span>
+        <div class="inline"><input id="opt-size" type="range" min="2" max="8" step="1"> <output id="out-size"></output></div>
+        <span>Dot shape</span>
+        <div class="seg" role="radiogroup">
+          <label><input type="radio" name="shape" value="round"> Round</label>
+          <label><input type="radio" name="shape" value="square"> Square</label>
+        </div>
+        <span>Unlit dots</span>
+        <label class="check"><input id="opt-unlit" type="checkbox"> Show faint unlit dots</label>
+        <span>Background</span>
+        <input id="opt-bg" type="color">
+        <span>Opacity</span>
+        <div class="inline"><input id="opt-opacity" type="range" min="0" max="100" step="1"> <output id="out-opacity"></output></div>
+        <span>Width</span>
+        <div class="inline"><input id="opt-width" type="range" min="80" max="400" step="1"> <output id="out-width"></output></div>
+      </fieldset>
+    </section>
+
+    <!-- Window -------------------------------------------------------------->
+    <section id="sec-window">
+      <h2>Window</h2>
+      <label class="check"><input id="opt-top" type="checkbox"> Keep the widget on top of other windows</label>
+      <div class="buttons">
+        <button id="btn-center" type="button">Move widget to centre of screen</button>
+        <button id="btn-quit" type="button" class="danger">Quit Dot Player</button>
+      </div>
+      <p class="muted small">Drag the widget to move it, right-click it to open these settings.</p>
+      <p id="about" class="muted small"></p>
+    </section>
+  </main>
+
+  <script src="../../deck/bridge.js"></script>
+  <script src="js/time.js"></script>
+  <script src="js/dotmatrix.js"></script>
+  <script src="js/player.js"></script>
+  <script src="js/store.js"></script>
+  <script src="js/worldtime.js"></script>
+  <script src="js/settings.js"></script>
+</body>
+</html>

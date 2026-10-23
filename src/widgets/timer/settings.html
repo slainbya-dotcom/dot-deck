@@ -1,0 +1,93 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Dot Timer — Settings</title>
+  <link rel="stylesheet" href="css/settings.css">
+</head>
+<body>
+  <main>
+    <!-- Timers ------------------------------------------------------------->
+    <section id="sec-timers">
+      <h2>Timers</h2>
+      <ul id="timer-list" class="timer-list"></ul>
+      <div class="buttons">
+        <button id="btn-add" type="button" class="primary">Add a timer</button>
+      </div>
+      <p id="timer-status" class="status error" role="status"></p>
+      <p class="muted small">Tip: hover a timer on the widget for start/pause and reset. Click the widget to silence a chime.</p>
+    </section>
+
+    <!-- Appearance ---------------------------------------------------------->
+    <section id="sec-look">
+      <h2>Appearance</h2>
+      <label class="check"><input id="opt-match" type="checkbox"> Match Dot Clock (same width, dot size and colours)</label>
+      <p id="match-status" class="muted small"></p>
+      <fieldset id="look-fields" class="grid plain">
+        <span>Dot colour</span>
+        <div class="inline">
+          <input id="opt-dot" type="color">
+          <button id="btn-dot-all" type="button" class="small-btn">Use for every timer</button>
+        </div>
+
+        <span>Dot size</span>
+        <div class="inline"><input id="opt-size" type="range" min="2" max="8" step="1"> <output id="out-size"></output></div>
+
+        <span>Dot shape</span>
+        <div class="seg" role="radiogroup">
+          <label><input type="radio" name="shape" value="round"> Round</label>
+          <label><input type="radio" name="shape" value="square"> Square</label>
+        </div>
+
+        <span>Unlit dots</span>
+        <label class="check"><input id="opt-unlit" type="checkbox"> Show faint unlit dots</label>
+
+        <span>Background</span>
+        <input id="opt-bg" type="color">
+
+        <span>Opacity</span>
+        <div class="inline"><input id="opt-opacity" type="range" min="0" max="100" step="1"> <output id="out-opacity"></output></div>
+
+        <span>Width</span>
+        <div class="inline"><input id="opt-width" type="range" min="80" max="400" step="1"> <output id="out-width"></output></div>
+      </fieldset>
+    </section>
+
+    <!-- Sound --------------------------------------------------------------->
+    <section id="sec-sound">
+      <h2>Sound</h2>
+      <div class="grid">
+        <span>Volume</span>
+        <div class="inline">
+          <input id="opt-volume" type="range" min="0" max="100" step="1"> <output id="out-volume"></output>
+        </div>
+        <span>Chimes</span>
+        <div id="chime-gallery" class="chime-gallery"></div>
+      </div>
+      <p class="muted small">All ten are synthesised 8-bit and 16-bit sounds in major keys. Pick one per timer above.</p>
+    </section>
+
+    <!-- Window -------------------------------------------------------------->
+    <section id="sec-window">
+      <h2>Window</h2>
+      <label class="check"><input id="opt-top" type="checkbox"> Keep the widget on top of other windows</label>
+      <div class="buttons">
+        <button id="btn-center" type="button">Move widget to centre of screen</button>
+        <button id="btn-quit" type="button" class="danger">Quit Dot Timer</button>
+      </div>
+      <p class="muted small">Drag the widget to move it, right-click it to open these settings.</p>
+      <p id="about" class="muted small"></p>
+    </section>
+  </main>
+
+  <script src="../../deck/bridge.js"></script>
+  <script src="js/time.js"></script>
+  <script src="js/dotmatrix.js"></script>
+  <script src="js/timers.js"></script>
+  <script src="js/chimes.js"></script>
+  <script src="js/store.js"></script>
+  <script src="js/worldtime.js"></script>
+  <script src="js/settings.js"></script>
+</body>
+</html>

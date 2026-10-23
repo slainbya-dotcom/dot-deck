@@ -1,0 +1,101 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Dot Dice — Settings</title>
+  <link rel="stylesheet" href="css/settings.css">
+</head>
+<body>
+  <main>
+    <!-- Views ----------------------------------------------------------------->
+    <section id="sec-views">
+      <h2>Views</h2>
+      <label class="check"><input id="opt-view-dice" type="checkbox"> Dice: pick dice, roll, add together or show each</label>
+      <label class="check"><input id="opt-view-saved" type="checkbox"> Saved rolls: click one on the widget to roll it</label>
+      <p class="muted small">You can also show or hide saved rolls from the tray icon's menu. On the widget: click a die to add it, right-click (or scroll down) to remove one.</p>
+    </section>
+
+    <!-- Saved rolls ------------------------------------------------------------->
+    <section id="sec-saved">
+      <h2>Saved rolls</h2>
+      <ul id="saved-list" class="saved-list"></ul>
+      <div class="buttons">
+        <button id="btn-add" type="button">+ New saved roll</button>
+        <button id="btn-from-pool" type="button">Save the dice in the pool</button>
+      </div>
+      <p id="saved-status" class="status" role="status"></p>
+      <p class="muted small">Up to 8 saved rolls, 10 dice each. About 8 letters of the label fit on the widget. With <strong>Show each</strong>, the modifier is added to every die (e.g. 2d20+5 for advantage); the widget marks those rolls “EA”.</p>
+    </section>
+
+    <!-- Rolling -------------------------------------------------------------->
+    <section id="sec-rolling">
+      <h2>Rolling</h2>
+      <div class="grid">
+        <span>Roll sound</span>
+        <div class="inline"><span id="slot-sound"></span><button id="test-sound" type="button" class="small-btn">▶ Test</button></div>
+        <span>Natural 20</span>
+        <div class="inline"><span id="slot-crit"></span><span class="muted">plays after a d20 lands on 20</span></div>
+        <span>Volume</span>
+        <div class="inline"><input id="opt-volume" type="range" min="0" max="100" step="1"> <output id="out-volume"></output></div>
+        <span>Highlights</span>
+        <label class="check"><input id="opt-crits" type="checkbox"> Natural 20 in green, natural 1 in red (d20)</label>
+        <span>Colours</span>
+        <div class="seg" role="radiogroup">
+          <label><input type="radio" name="cmode" value="each"> A colour per die</label>
+          <label><input type="radio" name="cmode" value="one"> All in the dot colour</label>
+        </div>
+      </div>
+      <div id="die-colours" class="die-colours"></div>
+      <p class="muted small">Dice use your computer's secure random numbers, so every face is equally likely. D00 + D10 rolled together make a percentile roll (1–100).</p>
+    </section>
+
+    <!-- Appearance ---------------------------------------------------------->
+    <section id="sec-look">
+      <h2>Appearance</h2>
+      <label class="check"><input id="opt-match" type="checkbox"> Match Dot Clock (same width, dot size and colours)</label>
+      <p id="match-status" class="muted small"></p>
+      <fieldset id="look-fields" class="grid plain">
+        <span>Dot colour</span>
+        <input id="opt-dot" type="color">
+        <span>Dot size</span>
+        <div class="inline"><input id="opt-size" type="range" min="2" max="8" step="1"> <output id="out-size"></output></div>
+        <span>Dot shape</span>
+        <div class="seg" role="radiogroup">
+          <label><input type="radio" name="shape" value="round"> Round</label>
+          <label><input type="radio" name="shape" value="square"> Square</label>
+        </div>
+        <span>Unlit dots</span>
+        <label class="check"><input id="opt-unlit" type="checkbox"> Show faint unlit dots</label>
+        <span>Background</span>
+        <input id="opt-bg" type="color">
+        <span>Opacity</span>
+        <div class="inline"><input id="opt-opacity" type="range" min="0" max="100" step="1"> <output id="out-opacity"></output></div>
+        <span>Width</span>
+        <div class="inline"><input id="opt-width" type="range" min="80" max="400" step="1"> <output id="out-width"></output></div>
+      </fieldset>
+    </section>
+
+    <!-- Window -------------------------------------------------------------->
+    <section id="sec-window">
+      <h2>Window</h2>
+      <label class="check"><input id="opt-top" type="checkbox"> Keep the widget on top of other windows</label>
+      <div class="buttons">
+        <button id="btn-center" type="button">Move widget to centre of screen</button>
+        <button id="btn-quit" type="button" class="danger">Quit Dot Dice</button>
+      </div>
+      <p class="muted small">Drag the widget to move it, right-click it to open these settings.</p>
+      <p id="about" class="muted small"></p>
+    </section>
+  </main>
+
+  <script src="../../deck/bridge.js"></script>
+  <script src="js/time.js"></script>
+  <script src="js/dotmatrix.js"></script>
+  <script src="js/dice.js"></script>
+  <script src="js/chimes.js"></script>
+  <script src="js/store.js"></script>
+  <script src="js/worldtime.js"></script>
+  <script src="js/settings.js"></script>
+</body>
+</html>

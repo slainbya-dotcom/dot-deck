@@ -1,0 +1,122 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Dot Weather — Settings</title>
+  <link rel="stylesheet" href="css/settings.css">
+</head>
+<body>
+  <main>
+    <!-- Now ------------------------------------------------------------------->
+    <section id="sec-now">
+      <h2>Right now</h2>
+      <div class="card">
+        <div id="now-main" class="strong">Getting the weather…</div>
+        <div id="now-meta" class="muted"></div>
+      </div>
+      <div class="buttons"><button id="btn-refresh" type="button">Refresh now</button></div>
+      <p class="muted small">Forecasts update every 30 minutes. If the computer is offline, the widget keeps showing the last forecast. Weather data by <strong>Open-Meteo.com</strong> (CC BY 4.0).</p>
+    </section>
+
+    <!-- Style ----------------------------------------------------------------->
+    <section id="sec-style">
+      <h2>Style</h2>
+      <div id="style-list" class="style-list"></div>
+      <div id="days-row" class="grid" hidden>
+        <span>Days ahead</span>
+        <select id="opt-days">
+          <option value="1">Today only</option>
+          <option value="2">2 days</option>
+          <option value="3">3 days</option>
+          <option value="4">4 days</option>
+        </select>
+      </div>
+    </section>
+
+    <!-- Places ---------------------------------------------------------------->
+    <section id="sec-places">
+      <h2>Places</h2>
+      <div class="buttons"><button id="btn-locate" type="button" class="primary">Use my location</button><button id="btn-import" type="button">Copy cities from Dot Clock</button></div>
+      <div class="search place-search">
+        <input id="add-search" type="search" placeholder="Add a city, e.g. Manchester" autocomplete="off" spellcheck="false">
+        <ul id="add-results" class="results" role="listbox" hidden></ul>
+      </div>
+      <p id="place-status" class="status" role="status"></p>
+      <ul id="place-list" class="timer-list"></ul>
+      <p class="muted small">The top place is the <strong>main</strong> one: styles A–D show its weather, with its name as a reminder. Cities (E) shows every place. Rename a place to change what the widget says, e.g. HOME or OFFICE.</p>
+    </section>
+
+    <!-- Units --------------------------------------------------------------->
+    <section id="sec-units">
+      <h2>Units &amp; icons</h2>
+      <div class="grid">
+        <span>Temperature</span>
+        <div class="seg" role="radiogroup">
+          <label><input type="radio" name="unit" value="C"> °C</label>
+          <label><input type="radio" name="unit" value="F"> °F</label>
+        </div>
+        <span>Hours shown as</span>
+        <div class="seg" role="radiogroup">
+          <label><input type="radio" name="fmt" value="24"> 24-hour (15)</label>
+          <label><input type="radio" name="fmt" value="12"> 12-hour (3PM)</label>
+        </div>
+        <span>Icons</span>
+        <div class="seg" role="radiogroup">
+          <label><input type="radio" name="icons" value="natural"> Weather colours</label>
+          <label><input type="radio" name="icons" value="mono"> Dot colour only</label>
+        </div>
+      </div>
+    </section>
+
+    <!-- Appearance ---------------------------------------------------------->
+    <section id="sec-look">
+      <h2>Appearance</h2>
+      <label class="check"><input id="opt-match" type="checkbox"> Match Dot Clock (same width, dot size and colours)</label>
+      <p id="match-status" class="muted small"></p>
+      <fieldset id="look-fields" class="grid plain">
+        <span>Dot colour</span>
+        <input id="opt-dot" type="color">
+        <span>Dot size</span>
+        <div class="inline"><input id="opt-size" type="range" min="2" max="8" step="1"> <output id="out-size"></output></div>
+        <span>Dot shape</span>
+        <div class="seg" role="radiogroup">
+          <label><input type="radio" name="shape" value="round"> Round</label>
+          <label><input type="radio" name="shape" value="square"> Square</label>
+        </div>
+        <span>Unlit dots</span>
+        <label class="check"><input id="opt-unlit" type="checkbox"> Show faint unlit dots</label>
+        <span>Background</span>
+        <input id="opt-bg" type="color">
+        <span>Opacity</span>
+        <div class="inline"><input id="opt-opacity" type="range" min="0" max="100" step="1"> <output id="out-opacity"></output></div>
+        <span>Width</span>
+        <div class="inline"><input id="opt-width" type="range" min="80" max="400" step="1"> <output id="out-width"></output></div>
+      </fieldset>
+    </section>
+
+    <!-- Window -------------------------------------------------------------->
+    <section id="sec-window">
+      <h2>Window</h2>
+      <label class="check"><input id="opt-top" type="checkbox"> Keep the widget on top of other windows</label>
+      <div class="buttons">
+        <button id="btn-center" type="button">Move widget to centre of screen</button>
+        <button id="btn-quit" type="button" class="danger">Quit Dot Weather</button>
+      </div>
+      <p class="muted small">Drag the widget to move it, right-click it to open these settings.</p>
+      <p id="about" class="muted small"></p>
+    </section>
+  </main>
+
+  <script src="../../deck/bridge.js"></script>
+  <script src="js/time.js"></script>
+  <script src="js/dotmatrix.js"></script>
+  <script src="js/data.js"></script>
+  <script src="js/geo.js"></script>
+  <script src="js/weather.js"></script>
+  <script src="js/forecast.js"></script>
+  <script src="js/store.js"></script>
+  <script src="js/worldtime.js"></script>
+  <script src="js/settings.js"></script>
+</body>
+</html>

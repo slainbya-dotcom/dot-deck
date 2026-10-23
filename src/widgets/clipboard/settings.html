@@ -1,0 +1,90 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Dot Clipboard — Settings</title>
+  <link rel="stylesheet" href="css/settings.css">
+</head>
+<body>
+  <main>
+    <!-- History ---------------------------------------------------------------->
+    <section id="sec-history">
+      <h2>History</h2>
+      <label class="check"><input id="opt-paused" type="checkbox"> Pause (don’t record anything I copy)</label>
+      <ul id="clip-list" class="clip-list"></ul>
+      <div class="buttons">
+        <button id="btn-clear" type="button">Clear history (keep pinned)</button>
+        <button id="btn-clear-all" type="button" class="danger">Clear everything</button>
+      </div>
+      <p id="clip-status" class="status" role="status"></p>
+      <p class="muted small">Text only. Anything a password manager marks as private is never recorded. Nothing leaves your computer. On the widget: click a clip to copy it again, hover for its pin and ✕.</p>
+    </section>
+
+    <!-- Options ---------------------------------------------------------------->
+    <section id="sec-options">
+      <h2>Options</h2>
+      <div class="grid">
+        <span>Style</span>
+        <div class="seg" role="radiogroup">
+          <label><input type="radio" name="style" value="history"> A · History</label>
+          <label><input type="radio" name="style" value="latest"> B · Latest</label>
+        </div>
+        <span class="for-history">Rows shown</span>
+        <div class="inline for-history"><input id="opt-rows" type="range" min="3" max="10" step="1"> <output id="out-rows"></output></div>
+        <span>Keep</span>
+        <div class="inline"><input id="opt-max" type="range" min="5" max="50" step="1"> <output id="out-max"></output></div>
+        <span></span>
+        <label class="check"><input id="opt-remember" type="checkbox"> Keep the history when the app restarts</label>
+      </div>
+      <p class="muted small">Pinned clips don’t count towards the limit and are always kept.</p>
+    </section>
+
+    <!-- Appearance ---------------------------------------------------------->
+    <section id="sec-look">
+      <h2>Appearance</h2>
+      <label class="check"><input id="opt-match" type="checkbox"> Match Dot Clock (same width, dot size and colours)</label>
+      <p id="match-status" class="muted small"></p>
+      <fieldset id="look-fields" class="grid plain">
+        <span>Dot colour</span>
+        <input id="opt-dot" type="color">
+        <span>Dot size</span>
+        <div class="inline"><input id="opt-size" type="range" min="2" max="8" step="1"> <output id="out-size"></output></div>
+        <span>Dot shape</span>
+        <div class="seg" role="radiogroup">
+          <label><input type="radio" name="shape" value="round"> Round</label>
+          <label><input type="radio" name="shape" value="square"> Square</label>
+        </div>
+        <span>Unlit dots</span>
+        <label class="check"><input id="opt-unlit" type="checkbox"> Show faint unlit dots</label>
+        <span>Background</span>
+        <input id="opt-bg" type="color">
+        <span>Opacity</span>
+        <div class="inline"><input id="opt-opacity" type="range" min="0" max="100" step="1"> <output id="out-opacity"></output></div>
+        <span>Width</span>
+        <div class="inline"><input id="opt-width" type="range" min="80" max="400" step="1"> <output id="out-width"></output></div>
+      </fieldset>
+    </section>
+
+    <!-- Window -------------------------------------------------------------->
+    <section id="sec-window">
+      <h2>Window</h2>
+      <label class="check"><input id="opt-top" type="checkbox"> Keep the widget on top of other windows</label>
+      <div class="buttons">
+        <button id="btn-center" type="button">Move widget to centre of screen</button>
+        <button id="btn-quit" type="button" class="danger">Quit Dot Clipboard</button>
+      </div>
+      <p class="muted small">Drag the widget to move it, right-click it to open these settings.</p>
+      <p id="about" class="muted small"></p>
+    </section>
+  </main>
+
+  <script src="../../deck/bridge.js"></script>
+  <script src="js/time.js"></script>
+  <script src="js/dotmatrix.js"></script>
+  <script src="js/clipboard.js"></script>
+  <script src="js/store.js"></script>
+  <script src="js/worldtime.js"></script>
+  <script src="js/settings.js"></script>
+</body>
+</html>

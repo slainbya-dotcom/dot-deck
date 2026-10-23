@@ -1,0 +1,109 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Dot Planner — Settings</title>
+  <link rel="stylesheet" href="css/settings.css">
+</head>
+<body>
+  <main>
+    <!-- Next overlap ---------------------------------------------------------->
+    <section id="sec-now">
+      <h2>Next meeting window</h2>
+      <div class="card">
+        <div id="overlap-main" class="strong"></div>
+        <div id="overlap-meta" class="muted"></div>
+      </div>
+    </section>
+
+    <!-- Cities ---------------------------------------------------------------->
+    <section id="sec-cities">
+      <h2>Cities</h2>
+      <div class="search">
+        <input id="add-search" type="search" placeholder="Add a city, e.g. Singapore" autocomplete="off" spellcheck="false">
+        <ul id="add-results" class="results" role="listbox" hidden></ul>
+      </div>
+      <div class="buttons"><button id="btn-import" type="button">Copy cities from Dot Clock</button></div>
+      <p id="city-status" class="status" role="status"></p>
+      <ul id="city-list" class="timer-list"></ul>
+      <p class="muted small">The first city is “home”: its hours label the timeline. Rename the short code shown on the widget (e.g. LON, HQ, MUM). Hours can run past midnight (e.g. awake 08–01).</p>
+    </section>
+
+    <!-- Layout ------------------------------------------------------------------>
+    <section id="sec-panels">
+      <h2>Layout</h2>
+      <ul id="panel-list" class="timer-list"></ul>
+      <div class="grid">
+        <span>Look ahead</span>
+        <select id="opt-hours">
+          <option value="6">6 hours</option>
+          <option value="12">12 hours</option>
+          <option value="24">24 hours</option>
+        </select>
+        <span>Hours shown as</span>
+        <div class="seg" role="radiogroup">
+          <label><input type="radio" name="fmt" value="24"> 24-hour (14)</label>
+          <label><input type="radio" name="fmt" value="12"> 12-hour (2P)</label>
+        </div>
+        <span>Highlight</span>
+        <input id="opt-highlight" type="color">
+        <span>Chime</span>
+        <div class="inline"><span id="slot-chime"></span><button id="test-chime" type="button" class="small-btn">▶ Test</button></div>
+        <span>Volume</span>
+        <div class="inline"><input id="opt-volume" type="range" min="0" max="100" step="1"> <output id="out-volume"></output></div>
+      </div>
+      <p class="muted small">Highlight colours the “everyone’s working” bar and working-hour numbers. The chime plays when a window with everyone working begins. The numbers view shows as many hours as fit.</p>
+    </section>
+
+    <!-- Appearance ---------------------------------------------------------->
+    <section id="sec-look">
+      <h2>Appearance</h2>
+      <label class="check"><input id="opt-match" type="checkbox"> Match Dot Clock (same width, dot size and colours)</label>
+      <p id="match-status" class="muted small"></p>
+      <fieldset id="look-fields" class="grid plain">
+        <span>Dot colour</span>
+        <input id="opt-dot" type="color">
+        <span>Dot size</span>
+        <div class="inline"><input id="opt-size" type="range" min="2" max="8" step="1"> <output id="out-size"></output></div>
+        <span>Dot shape</span>
+        <div class="seg" role="radiogroup">
+          <label><input type="radio" name="shape" value="round"> Round</label>
+          <label><input type="radio" name="shape" value="square"> Square</label>
+        </div>
+        <span>Unlit dots</span>
+        <label class="check"><input id="opt-unlit" type="checkbox"> Show faint unlit dots</label>
+        <span>Background</span>
+        <input id="opt-bg" type="color">
+        <span>Opacity</span>
+        <div class="inline"><input id="opt-opacity" type="range" min="0" max="100" step="1"> <output id="out-opacity"></output></div>
+        <span>Width</span>
+        <div class="inline"><input id="opt-width" type="range" min="80" max="400" step="1"> <output id="out-width"></output></div>
+      </fieldset>
+    </section>
+
+    <!-- Window -------------------------------------------------------------->
+    <section id="sec-window">
+      <h2>Window</h2>
+      <label class="check"><input id="opt-top" type="checkbox"> Keep the widget on top of other windows</label>
+      <div class="buttons">
+        <button id="btn-center" type="button">Move widget to centre of screen</button>
+        <button id="btn-quit" type="button" class="danger">Quit Dot Planner</button>
+      </div>
+      <p class="muted small">Drag the widget to move it, right-click it to open these settings.</p>
+      <p id="about" class="muted small"></p>
+    </section>
+  </main>
+
+  <script src="../../deck/bridge.js"></script>
+  <script src="js/time.js"></script>
+  <script src="js/dotmatrix.js"></script>
+  <script src="js/data.js"></script>
+  <script src="js/geo.js"></script>
+  <script src="js/planner.js"></script>
+  <script src="js/chimes.js"></script>
+  <script src="js/store.js"></script>
+  <script src="js/worldtime.js"></script>
+  <script src="js/settings.js"></script>
+</body>
+</html>

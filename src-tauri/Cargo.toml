@@ -1,0 +1,62 @@
+[package]
+name = "dot-deck"
+version = "1.0.1"
+description = "Every Dot widget in one app"
+edition = "2021"
+
+[lib]
+# The `_lib` suffix avoids a name clash with the binary on Windows.
+name = "dot_deck_lib"
+crate-type = ["staticlib", "cdylib", "rlib"]
+
+[build-dependencies]
+tauri-build = { version = "2", features = [] }
+
+[dependencies]
+# `macos-private-api` is required for truly transparent windows on macOS.
+tauri = { version = "2", features = ["macos-private-api", "tray-icon"] }
+tauri-plugin-single-instance = "2"
+serde_json = "1"
+serde = { version = "1", features = ["derive"] }
+# Dot System: CPU, memory, disk and network (pinned: its API changes between minor versions)
+sysinfo = "=0.32.1"
+# Dot System: battery
+starship-battery = "0.10"
+# Dot Visualiser: listening to the sound, and splitting it into frequencies
+cpal = "0.15"
+rustfft = "6"
+# Dot Clipboard: reading and writing the clipboard (text)
+arboard = "3"
+# Dot Launcher: "choose a file / folder" dialogs
+rfd = "0.15"
+# Dot Reader: downloading pages
+ureq = "2"
+
+# Windows: what's playing and Core Audio (Dot Player / Visualiser). Pinned: the
+# `windows` crate changes its API between versions.
+[target.'cfg(windows)'.dependencies.windows]
+version = "=0.58.0"
+features = [
+  "Foundation",
+  "Media_Control",
+  "Win32_Foundation",
+  "Win32_Media_Audio",
+  "Win32_Media_Audio_Endpoints",
+  "Win32_System_Com",
+  "Win32_System_Com_StructuredStorage",
+  "Win32_System_Variant",
+  "Win32_UI_Shell_PropertiesSystem",
+  "Win32_Devices_FunctionDiscovery",
+]
+
+# Windows: spotting text a password manager marked "don't record" (Dot Clipboard)
+[target.'cfg(windows)'.dependencies.windows-sys]
+version = "0.59"
+features = ["Win32_Foundation", "Win32_System_DataExchange"]
+
+[profile.release]
+codegen-units = 1
+lto = true
+opt-level = "s"
+panic = "abort"
+strip = true

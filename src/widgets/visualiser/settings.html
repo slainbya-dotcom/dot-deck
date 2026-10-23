@@ -1,0 +1,98 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Dot Visualiser — Settings</title>
+  <link rel="stylesheet" href="css/settings.css">
+</head>
+<body>
+  <main>
+    <!-- Style ----------------------------------------------------------------->
+    <section id="sec-style">
+      <h2>Style</h2>
+      <div id="style-list" class="style-list"></div>
+      <p class="muted small">Tick “Show what’s playing” on any style to put the track and artist above it. Click the widget (or use the tray menu) to flip through the styles.</p>
+    </section>
+
+    <!-- Sound ----------------------------------------------------------------->
+    <section id="sec-sound">
+      <h2>Sound</h2>
+      <div class="grid">
+        <span>Listen to</span>
+        <select id="opt-source"></select>
+        <span>Sensitivity</span>
+        <div class="inline"><input id="opt-sens" type="range" min="0" max="100" step="1"> <output id="out-sens"></output></div>
+        <span class="mac-only" hidden>Track from</span>
+        <select id="opt-player" class="mac-only" hidden>
+          <option value="auto">Spotify or Music, whichever is playing</option>
+          <option value="spotify">Spotify only</option>
+          <option value="music">Apple Music only</option>
+        </select>
+      </div>
+      <p id="sound-status" class="muted small"></p>
+      <p id="mac-note" class="muted small" hidden>On a Mac, apps can’t simply listen to the computer’s own sound. “Default input” is usually the microphone, which shows the room. For the music itself, install a free loopback driver such as BlackHole, send your sound through it, and choose it here. The first time, macOS asks whether Dot Visualiser may use the microphone: click OK. Nothing is recorded or sent anywhere.</p>
+    </section>
+
+    <!-- Colours ----------------------------------------------------------------->
+    <section id="sec-colours">
+      <h2>Colours</h2>
+      <div class="grid">
+        <span>Colours</span>
+        <div class="seg" role="radiogroup">
+          <label><input type="radio" name="cmode" value="meter"> Meter colours (green, amber, red)</label>
+          <label><input type="radio" name="cmode" value="one"> All in the dot colour</label>
+        </div>
+        <span>Peaks</span>
+        <label class="check"><input id="opt-peaks" type="checkbox"> Peak caps on columns and VU meters</label>
+      </div>
+    </section>
+
+    <!-- Appearance ---------------------------------------------------------->
+    <section id="sec-look">
+      <h2>Appearance</h2>
+      <label class="check"><input id="opt-match" type="checkbox"> Match Dot Clock (same width, dot size and colours)</label>
+      <p id="match-status" class="muted small"></p>
+      <fieldset id="look-fields" class="grid plain">
+        <span>Dot colour</span>
+        <input id="opt-dot" type="color">
+        <span>Dot size</span>
+        <div class="inline"><input id="opt-size" type="range" min="2" max="8" step="1"> <output id="out-size"></output></div>
+        <span>Dot shape</span>
+        <div class="seg" role="radiogroup">
+          <label><input type="radio" name="shape" value="round"> Round</label>
+          <label><input type="radio" name="shape" value="square"> Square</label>
+        </div>
+        <span>Unlit dots</span>
+        <label class="check"><input id="opt-unlit" type="checkbox"> Show faint unlit dots</label>
+        <span>Background</span>
+        <input id="opt-bg" type="color">
+        <span>Opacity</span>
+        <div class="inline"><input id="opt-opacity" type="range" min="0" max="100" step="1"> <output id="out-opacity"></output></div>
+        <span>Width</span>
+        <div class="inline"><input id="opt-width" type="range" min="80" max="400" step="1"> <output id="out-width"></output></div>
+      </fieldset>
+    </section>
+
+    <!-- Window -------------------------------------------------------------->
+    <section id="sec-window">
+      <h2>Window</h2>
+      <label class="check"><input id="opt-top" type="checkbox"> Keep the widget on top of other windows</label>
+      <div class="buttons">
+        <button id="btn-center" type="button">Move widget to centre of screen</button>
+        <button id="btn-quit" type="button" class="danger">Quit Dot Visualiser</button>
+      </div>
+      <p class="muted small">Drag the widget to move it, right-click it to open these settings.</p>
+      <p id="about" class="muted small"></p>
+    </section>
+  </main>
+
+  <script src="../../deck/bridge.js"></script>
+  <script src="js/time.js"></script>
+  <script src="js/dotmatrix.js"></script>
+  <script src="js/viz.js"></script>
+  <script src="js/store.js"></script>
+  <script src="js/worldtime.js"></script>
+  <script src="js/settings.js"></script>
+</body>
+</html>

@@ -1,0 +1,103 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Dot Clock — Settings</title>
+  <link rel="stylesheet" href="css/settings.css">
+</head>
+<body>
+  <main>
+    <!-- Location ------------------------------------------------------------>
+    <section id="sec-location">
+      <h2>Your location</h2>
+      <div class="card home">
+        <div class="home-text">
+          <div id="home-label" class="strong">Not set yet</div>
+          <div id="home-meta" class="muted">Your home clock appears first on the widget.</div>
+        </div>
+      </div>
+      <div class="buttons">
+        <button id="btn-locate" type="button">Use location services</button>
+      </div>
+      <div class="search home-search">
+        <input id="home-search" type="search" placeholder="Or search for your city, e.g. Manchester" autocomplete="off" spellcheck="false">
+        <ul id="home-results" class="results" role="listbox" hidden></ul>
+      </div>
+      <p id="loc-status" class="status" role="status"></p>
+      <p class="muted small">Can't find your town? Pick the nearest city in the same time zone, then rename it under Clocks. Your location is only used to choose your time zone and never leaves this computer.</p>
+    </section>
+
+    <!-- Clocks -------------------------------------------------------------->
+    <section id="sec-clocks">
+      <h2>Clocks</h2>
+      <div class="search">
+        <input id="add-search" type="search" placeholder="Add a city, e.g. New York" autocomplete="off" spellcheck="false">
+        <ul id="add-results" class="results" role="listbox" hidden></ul>
+      </div>
+      <p id="clock-status" class="status error" role="status"></p>
+      <ul id="clock-list" class="clock-list"></ul>
+      <p class="muted small">Rename a clock by editing its name. The colour swatch overrides the dot colour for that row.</p>
+    </section>
+
+    <!-- Appearance ---------------------------------------------------------->
+    <section id="sec-look">
+      <h2>Appearance</h2>
+      <div class="grid">
+        <span>Time format</span>
+        <div class="seg" role="radiogroup">
+          <label><input type="radio" name="fmt" value="24"> 24-hour</label>
+          <label><input type="radio" name="fmt" value="12"> 12-hour (AM/PM)</label>
+        </div>
+
+        <span>Seconds</span>
+        <label class="check"><input id="opt-seconds" type="checkbox"> Show seconds</label>
+
+        <span>Dot colour</span>
+        <div class="inline">
+          <input id="opt-dot" type="color">
+          <button id="btn-dot-all" type="button" class="small-btn">Use for every row</button>
+        </div>
+
+        <span>Dot size</span>
+        <div class="inline"><input id="opt-size" type="range" min="2" max="8" step="1"> <output id="out-size"></output></div>
+
+        <span>Dot shape</span>
+        <div class="seg" role="radiogroup">
+          <label><input type="radio" name="shape" value="round"> Round</label>
+          <label><input type="radio" name="shape" value="square"> Square</label>
+        </div>
+
+        <span>Unlit dots</span>
+        <label class="check"><input id="opt-unlit" type="checkbox"> Show faint unlit dots</label>
+
+        <span>Background</span>
+        <input id="opt-bg" type="color">
+
+        <span>Opacity</span>
+        <div class="inline"><input id="opt-opacity" type="range" min="0" max="100" step="1"> <output id="out-opacity"></output></div>
+      </div>
+    </section>
+
+    <!-- Window -------------------------------------------------------------->
+    <section id="sec-window">
+      <h2>Window</h2>
+      <label class="check"><input id="opt-top" type="checkbox"> Keep the widget on top of other windows</label>
+      <div class="buttons">
+        <button id="btn-center" type="button">Move widget to centre of screen</button>
+        <button id="btn-quit" type="button" class="danger">Quit Dot Clock</button>
+      </div>
+      <p class="muted small">Tip: drag the widget to move it, right-click it to open these settings.</p>
+      <p id="about" class="muted small"></p>
+    </section>
+  </main>
+
+  <script src="../../deck/bridge.js"></script>
+  <script src="js/data.js"></script>
+  <script src="js/time.js"></script>
+  <script src="js/solar.js"></script>
+  <script src="js/geo.js"></script>
+  <script src="js/store.js"></script>
+  <script src="js/settings.js"></script>
+</body>
+</html>

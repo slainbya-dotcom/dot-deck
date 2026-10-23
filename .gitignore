@@ -1,0 +1,10 @@
+node_modules/
+src-tauri/target/
+src-tauri/gen/
+preview/
+*.log
+.DS_Store
+
+# Copied from node_modules before each build (tools/vendor.js)
+src/widgets/reader/js/vendor/Readability.js
+src/widgets/reader/js/vendor/Readability-LICENSE.md

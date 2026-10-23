@@ -1,0 +1,86 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Dot Deck</title>
+  <link rel="stylesheet" href="settings.css">
+</head>
+<body>
+  <nav id="side" class="side" aria-label="Settings sections"></nav>
+  <main id="main" class="main">
+    <!-- Widgets -->
+    <section id="tab-widgets" class="pane" hidden>
+      <h1>Widgets</h1>
+      <p class="muted">Switch each widget on or off. Widgets that are off don’t run at all.</p>
+      <ul id="widget-list" class="widget-list"></ul>
+      <div class="buttons">
+        <button id="btn-import-all" type="button">Copy settings from the separate apps…</button>
+        <button id="btn-quit" type="button" class="danger">Quit Dot Deck</button>
+      </div>
+      <p id="import-status" class="status"></p>
+    </section>
+
+    <!-- Layout -->
+    <section id="tab-layout" class="pane" hidden>
+      <h1>Layout</h1>
+      <p class="muted">Drag widgets anywhere, on any screen. Dot Deck keeps a separate layout for each screen setup and switches automatically when you plug in or unplug a monitor.</p>
+      <div class="card">
+        <div class="card-title">Screen setups</div>
+        <ul id="setup-list" class="setup-list"></ul>
+      </div>
+      <div class="grid">
+        <span>Arrange mode</span>
+        <label class="switch"><input id="opt-arrange" type="checkbox"><i></i></label>
+        <span>Snap into place</span>
+        <label class="switch"><input id="opt-snap" type="checkbox"><i></i></label>
+        <span>Lock positions</span>
+        <label class="switch"><input id="opt-lock" type="checkbox"><i></i></label>
+        <span>Hide all widgets</span>
+        <label class="switch"><input id="opt-hidden" type="checkbox"><i></i></label>
+        <span></span>
+        <div class="buttons tight">
+          <button id="btn-tidy-here" type="button">Tidy into a column on this screen</button>
+          <button id="btn-tidy-main" type="button">…on the main screen</button>
+        </div>
+      </div>
+      <p class="muted small">Arrange mode outlines every widget with its name. Widgets snap to screen edges and to each other when you let go. Hold <kbd>Alt</kbd> (<kbd>Option</kbd> on a Mac) while dragging to move a whole stack of snapped widgets together.</p>
+    </section>
+
+    <!-- Look & scale -->
+    <section id="tab-look" class="pane" hidden>
+      <h1>Look &amp; scale</h1>
+      <div class="grid">
+        <span>Scale</span>
+        <div class="inline"><input id="opt-scale" type="range" min="50" max="300" step="5"> <output id="out-scale"></output></div>
+      </div>
+      <p class="muted small">Makes every widget bigger or smaller, on top of your screen’s own scaling (Windows display scaling or a Retina screen), which Dot Deck already follows. Handy on a big high-resolution monitor, or a small low-resolution one. Each widget can also have its own scale, on its tab.</p>
+      <div class="card">
+        <div class="card-title">The shared look</div>
+        <p class="muted">Widgets with <strong>Match Dot Clock</strong> ticked (on their tab, under Appearance) use the Clock’s width, dot size and colours, so they line up neatly in a stack. Change the shared look on the <a href="#" data-goto="clock">Clock tab</a>.</p>
+      </div>
+      <div class="card">
+        <div class="card-title">Widgets with their own scale</div>
+        <ul id="scale-list" class="scale-list"></ul>
+      </div>
+    </section>
+
+    <!-- One widget -->
+    <section id="tab-widget" class="pane widget-pane" hidden>
+      <header class="whead">
+        <h1 id="w-title"></h1>
+        <label class="switch" title="On / off"><input id="w-on" type="checkbox"><i></i></label>
+        <span class="spacer"></span>
+        <label class="wscale">Own scale <input id="w-scale" type="range" min="50" max="200" step="5"> <output id="w-scale-out"></output></label>
+        <button id="w-find" type="button" title="Move it to the middle of its screen">Find it</button>
+        <button id="w-import" type="button" title="Copy this widget's settings from its separate app">Copy from the app</button>
+        <button id="w-reset" type="button" class="danger" title="Put this widget's settings back to how they start">Reset</button>
+      </header>
+      <p id="w-status" class="muted small off-note" hidden></p>
+      <p id="w-off" class="muted small off-note" hidden>This widget is off. You can still change its settings; switch it on to see it.</p>
+      <div id="frames" class="frames"></div>
+    </section>
+  </main>
+  <script src="settings.js"></script>
+</body>
+</html>

@@ -1,0 +1,89 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Dot Reader — Settings</title>
+  <link rel="stylesheet" href="css/settings.css">
+</head>
+<body>
+  <main>
+    <!-- Pages ------------------------------------------------------------------>
+    <section id="sec-pages">
+      <h2>Pages</h2>
+      <div class="grid">
+        <span>Home page</span>
+        <div class="add-line"><input id="opt-home" type="text" placeholder="e.g. bbc.co.uk/news (blank = the welcome page)" spellcheck="false"><button id="btn-home-last" type="button">Use the open page</button></div>
+        <span></span>
+        <label class="check"><input id="opt-remember" type="checkbox"> Reopen the last page I was reading</label>
+      </div>
+      <p class="muted small">Type an address in the widget's top bar (Ctrl+L / Cmd+L), or any words to search the web. Reading mode works best on articles, blogs, news, recipes, docs and Wikipedia.</p>
+    </section>
+
+    <!-- Size -------------------------------------------------------------------->
+    <section id="sec-size">
+      <h2>Size</h2>
+      <div class="grid">
+        <span>Width</span>
+        <div class="inline"><input id="opt-w" type="range" min="110" max="420" step="1"> <output id="out-w"></output></div>
+        <span>Height</span>
+        <div class="inline"><input id="opt-h" type="range" min="60" max="320" step="1"> <output id="out-h"></output></div>
+        <span>Dot size</span>
+        <div class="inline"><input id="opt-size" type="range" min="2" max="6" step="1"> <output id="out-size"></output></div>
+      </div>
+      <p id="size-note" class="muted small"></p>
+    </section>
+
+    <!-- Look -------------------------------------------------------------------->
+    <section id="sec-look">
+      <h2>Colours</h2>
+      <div class="grid">
+        <span>Presets</span>
+        <div class="buttons tight">
+          <button type="button" data-preset="#ffb000,#e8e4d0">Amber</button>
+          <button type="button" data-preset="#39ff7a,#d6ffe0">Green</button>
+          <button type="button" data-preset="#e8e4d0,#e8e4d0">White</button>
+          <button type="button" data-preset="#5ad1ff,#dff4ff">Blue</button>
+        </div>
+        <span>Headings</span>
+        <input id="opt-color" type="color">
+        <span>Text</span>
+        <input id="opt-text" type="color">
+        <span>Dot shape</span>
+        <div class="seg" role="radiogroup">
+          <label><input type="radio" name="shape" value="round"> Round</label>
+          <label><input type="radio" name="shape" value="square"> Square</label>
+        </div>
+        <span>Unlit dots</span>
+        <label class="check"><input id="opt-unlit" type="checkbox"> Show faint unlit dots</label>
+        <span>Background</span>
+        <input id="opt-bg" type="color">
+        <span>Opacity</span>
+        <div class="inline"><input id="opt-opacity" type="range" min="0" max="100" step="1"> <output id="out-opacity"></output></div>
+      </div>
+      <p class="muted small">Dot Reader has its own size and colours; it doesn't follow Dot Clock.</p>
+    </section>
+
+    <!-- Window -------------------------------------------------------------->
+    <section id="sec-window">
+      <h2>Window</h2>
+      <label class="check"><input id="opt-top" type="checkbox"> Keep the widget on top of other windows</label>
+      <div class="buttons">
+        <button id="btn-center" type="button">Move widget to centre of screen</button>
+        <button id="btn-quit" type="button" class="danger">Quit Dot Reader</button>
+      </div>
+      <p class="muted small">Drag the widget to move it, right-click it to open these settings.</p>
+      <p id="about" class="muted small"></p>
+    </section>
+  </main>
+
+  <script src="../../deck/bridge.js"></script>
+  <script src="js/time.js"></script>
+  <script src="js/dotmatrix.js"></script>
+  <script src="js/vendor/Readability.js"></script>
+  <script src="js/reader.js"></script>
+  <script src="js/extract.js"></script>
+  <script src="js/store.js"></script>
+    <script src="js/settings.js"></script>
+</body>
+</html>
